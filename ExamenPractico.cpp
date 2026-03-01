@@ -2,36 +2,36 @@
 #include <iomanip>
 #include <string>
 
+using namespace std;
+
 int main() {
-    // Variables para almacenar los datos
-    std::string nombreCliente;
+    string nombreCliente;
     double precioProducto;
-    int cantidadComprada;
+    int cantidad;
+    double subtotal, iva, total;
 
-    // Solicitar datos al usuario
-    std::cout << "Ingrese el nombre del cliente: ";
-    std::getline(std::cin, nombreCliente);
-    
-    std::cout << "Ingrese el precio del producto: ";
-    std::cin >> precioProducto;
-    
-    std::cout << "Ingrese la cantidad comprada: ";
-    std::cin >> cantidadComprada;
+    cout << "Ingrese el nombre del cliente: ";
+    getline(cin, nombreCliente);
 
-    // Calcular subtotal, IVA y total
-    double subtotal = precioProducto * cantidadComprada;
-    double iva = subtotal * 0.12;
-    double total = subtotal + iva;
+    cout << "Ingrese el precio del producto: ";
+    cin >> precioProducto;
 
-    // Mostrar resultados con formato
-    std::cout << std::fixed << std::setprecision(2);
-    std::cout << "Nombre del cliente: " << nombreCliente << std::endl;
-    std::cout << "Subtotal: $" << subtotal << std::endl;
-    std::cout << "IVA (12%): $" << iva << std::endl;
-    std::cout << "Total a pagar: $" << total << std::endl;
+    cout << "Ingrese la cantidad comprada: ";
+    cin >> cantidad;
 
-    // Imprimir nombre del estudiante
-    std::cout << "Desarrollado por: Rodrigo Adrian Barrios Monterroso" << std::endl;
+    subtotal = precioProducto * cantidad;
+    iva = subtotal * 0.12;
+    total = subtotal + iva;
+
+    cout << fixed << setprecision(2);
+
+    cout << "\n----- FACTURA -----" << endl;
+    cout << "Cliente: " << nombreCliente << endl;
+    cout << "Subtotal: Q" << subtotal << endl;
+    cout << "IVA (12%): Q" << iva << endl;
+    cout << "Total a pagar: Q" << total << endl;
+
+    cout << "\nEstudiante: Rodrigo Adrian Barrios Monterroso" << endl;
 
     return 0;
 }
